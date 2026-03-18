@@ -2220,7 +2220,7 @@ impl LoginConfigHandler {
             msg.image_quality = q.into();
         } else if q == "custom" {
             let config = self.load_config();
-            // ½â³ı»­ÖÊºÍFPS×Ô¶¨ÒåÏŞÖµ
+            // è§£é™¤ç”»è´¨å’ŒFPSè‡ªå®šä¹‰é™å€¼
             let allow_more = true;
             let quality = if config.custom_image_quality.is_empty() {
                 50

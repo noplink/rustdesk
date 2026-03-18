@@ -376,7 +376,7 @@ pub enum Data {
     ClearTrustedDevices,
     #[cfg(all(target_os = "windows", feature = "flutter"))]
     PrinterData(Vec<u8>),
-    // ¿ØÖÆÍĞÅÌÍ¼±êµÄÏÔÊ¾/Òş²Ø×´Ì¬: true=Òş²Ø, false=ÏÔÊ¾
+    // æ§åˆ¶æ‰˜ç›˜å›¾æ ‡çš„æ˜¾ç¤º/éšè—çŠ¶æ€: true=éšè—, false=æ˜¾ç¤º
     #[cfg(not(any(target_os = "android", target_os = "ios")))]
     HideTray(bool),
     InstallOption(Option<(String, String)>),
