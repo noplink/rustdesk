@@ -289,13 +289,6 @@ class ServerModel with ChangeNotifier {
         verificationMethod == kUsePermanentPassword)) {
       hideTray = false;
     }
-    //修复隐藏托盘图标功能：
-    var hideTray = option2bool(
-        'hide-tray', await bind.mainGetOption(key: 'hide-tray'));
-    if (!(approveMode == 'password' &&
-        verificationMethod == kUsePermanentPassword)) {
-      hideTray = false;
-    }
     if (_approveMode != approveMode) {
       _approveMode = approveMode;
       update = true;
