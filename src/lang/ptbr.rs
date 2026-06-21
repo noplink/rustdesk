@@ -27,7 +27,11 @@ pub static ref T: std::collections::HashMap<&'static str, &'static str> =
         ("Enable clipboard", "Habilitar área de transferência"),
         ("Enable file transfer", "Habilitar transferência de arquivos"),
         ("Enable TCP tunneling", "Habilitar tunelamento TCP"),
+<<<<<<< ours
         ("IP Whitelisting", "Lista de IPs Permitidos"),
+=======
+        ("IP Whitelisting", "Lista de IPs Confiáveis"),
+>>>>>>> theirs
         ("ID/Relay Server", "Servidor ID/Relay"),
         ("Import server config", "Importar Configuração do Servidor"),
         ("Export Server Config", "Exportar Configuração do Servidor"),
@@ -325,7 +329,11 @@ pub static ref T: std::collections::HashMap<&'static str, &'static str> =
         ("Display Settings", "Configurações de exibição"),
         ("Ratio", "Proporção"),
         ("Image Quality", "Qualidade de imagem"),
+<<<<<<< ours
         ("Scroll Style", "Estilo de rolagem"),
+=======
+        ("Scroll Style", "Estilo de Rolagem"),
+>>>>>>> theirs
         ("Show Toolbar", "Mostrar barra de ferramentas"),
         ("Hide Toolbar", "Ocultar barra de ferramentas"),
         ("Direct Connection", "Conexão Direta"),
@@ -463,7 +471,11 @@ pub static ref T: std::collections::HashMap<&'static str, &'static str> =
         ("Empty Password", "Senha Vazia"),
         ("Me", "Eu"),
         ("identical_file_tip", "Este arquivo é idêntico ao do parceiro."),
+<<<<<<< ours
         ("show_monitors_tip", "Mostrar telas na barra de ferramentas"),
+=======
+        ("show_monitors_tip", "Mostrar monitores na barra de ferramentas"),
+>>>>>>> theirs
         ("View Mode", "Modo de visualização"),
         ("login_linux_tip", "Você precisa fazer login na conta Linux remota para habilitar uma sessão de desktop X"),
         ("verify_rustdesk_password_tip", "Verifique a senha do RustDesk"),
@@ -674,7 +686,11 @@ pub static ref T: std::collections::HashMap<&'static str, &'static str> =
         ("dont-show-again-tip", "Não mostrar novamente"),
         ("Take screenshot", "Capturar tela"),
         ("Taking screenshot", "Capturando tela"),
+<<<<<<< ours
         ("screenshot-merged-screen-not-supported-tip", "A captura de tela de múltiplas telas não é suportada no momento. Por favor, alterne para uma única tela e tente novamente."),
+=======
+        ("screenshot-merged-screen-not-supported-tip", "Mesclar a captura de tela de múltiplos monitores não é suportada no momento. Por favor, alterne para um único monitor e tente novamente."),
+>>>>>>> theirs
         ("screenshot-action-tip", "Por favor, selecione como deseja continuar com a captura de tela."),
         ("Save as", "Salvar como"),
         ("Copy to clipboard", "Copiar para área de transferência"),
@@ -694,7 +710,11 @@ pub static ref T: std::collections::HashMap<&'static str, &'static str> =
         ("Enable UDP hole punching", "Habilitar UDP hole punching"),
         ("View camera", "Visualizar câmera"),
         ("Enable camera", "Habilitar câmera"),
+<<<<<<< ours
         ("No cameras", "Nenhuma câmera"),
+=======
+        ("No cameras", "Nenhuma câmeras"),
+>>>>>>> theirs
         ("view_camera_unsupported_tip", "O dispositivo remoto não suporta visualização da câmera."),
         ("Terminal", "Terminal"),
         ("Enable terminal", "Habilitar terminal"),
@@ -759,7 +779,11 @@ pub static ref T: std::collections::HashMap<&'static str, &'static str> =
         ("remember-wayland-keyboard-choice-tip", "Não perguntar novamente para este computador remoto"),
         ("Why this happens", "Por que isso acontece"),
         ("Switch display", "Trocar de tela"),
+<<<<<<< ours
         ("Show monitor switch button on the main toolbar", "Mostrar botão de troca de tela na barra de ferramentas"),
+=======
+        ("Show monitor switch button on the main toolbar", "Mostrar o botão de troca de monitor na barra de ferramentas principal"),
+>>>>>>> theirs
         ("Show on the minimized toolbar", "Mostrar na barra de ferramentas minimizada"),
     ].iter().cloned().collect();
 }

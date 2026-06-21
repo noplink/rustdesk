@@ -463,10 +463,16 @@ impl DesktopManager {
         let (child_xorg, child_wm) = Self::start_x11(uid, gid, username, display_num, &envs)?;
         is_child_running.store(true, Ordering::SeqCst);
 
+<<<<<<< ours
         // capture the logind session scope (from a live child) for teardown and crash
         // recovery, see reap_session_scope and recover_orphaned_session.
         let scope_dir = Self::session_scope_dir(child_xorg.id());
         Self::save_orphaned_marker(&scope_dir, display_num);
+=======
+        // capture the logind session scope (from a live child) for teardown, see
+        // reap_session_scope.
+        let scope_dir = Self::session_scope_dir(child_xorg.id());
+>>>>>>> theirs
 
         log::info!("Start xorg and wm done, notify and wait xtop x11");
         allow_err!(tx_res.send("".to_owned()));
@@ -881,6 +887,7 @@ impl DesktopManager {
         std::io::Error::last_os_error().raw_os_error() == Some(hbb_common::libc::EPERM)
     }
 
+<<<<<<< ours
     const ORPHANED_SESSION_KEY: &'static str = "headless-orphaned-session";
 
     fn save_orphaned_marker(scope_dir: &str, display_num: u32) {
@@ -941,6 +948,8 @@ impl DesktopManager {
         Self::clear_orphaned_marker();
     }
 
+=======
+>>>>>>> theirs
     fn try_wait_stop_x11(
         child_xorg: &mut Child,
         child_wm: &mut Child,
@@ -960,7 +969,10 @@ impl DesktopManager {
                 Self::wait_x11_children_exit(child_xorg, child_wm);
                 Self::reap_session_scope(scope_dir);
                 Self::cleanup_x_display_files(display_num);
+<<<<<<< ours
                 Self::clear_orphaned_marker();
+=======
+>>>>>>> theirs
                 desktop_manager
                     .is_child_running
                     .store(false, Ordering::SeqCst);
@@ -1145,6 +1157,7 @@ mod tests {
 
         assert_eq!(pids, vec![100, 101, 200, 300]);
     }
+<<<<<<< ours
 
     #[test]
     fn parses_orphaned_session_marker() {
@@ -1168,4 +1181,6 @@ mod tests {
         assert_eq!(DesktopManager::parse_orphaned_marker("/scope;7"), None);
         assert_eq!(DesktopManager::parse_orphaned_marker("/scope;notnum;abc"), None);
     }
+=======
+>>>>>>> theirs
 }
