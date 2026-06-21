@@ -402,3 +402,14 @@ fn start_ipc_listener(sender: std::sync::mpsc::Sender<Data>) {
         }
     });
 }
+
+/// Send hide/show tray icon message via IPC
+#[cfg(not(any(target_os = "android", target_os = "ios")))]
+pub fn send_hide_tray_message(hide: bool) {
+    use crate::ipc::Data;
+    hbb_common::tokio::runtime::Runtime::new().unwrap().block_on(async {
+        if let Ok(mut conn) = crate::ipc::connect(1000, "hide-tray").await {
+            let _ = conn.send(&Data::HideTray(hide)).await;
+        }
+    });
+}

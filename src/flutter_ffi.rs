@@ -965,17 +965,9 @@ pub fn main_get_error() -> String {
     get_error()
 }
 
-/// 通过 IPC 向 tray 进程发送隐藏/显示托盘图标消息
 #[cfg(not(any(target_os = "android", target_os = "ios")))]
 fn send_hide_tray_message(hide: bool) {
-    use crate::ipc::Data;
-    use hbb_common::tokio;
-
-    tokio::runtime::Runtime::new().unwrap().block_on(async {
-        if let Ok(mut conn) = crate::ipc::connect(1000, "hide-tray").await {
-            let _ = conn.send(&Data::HideTray(hide)).await;
-        }
-    });
+    crate::tray::send_hide_tray_message(hide);
 }
 
 pub fn main_show_option(_key: String) -> SyncReturn<bool> {
